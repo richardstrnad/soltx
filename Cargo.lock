@@ -5079,7 +5079,6 @@ dependencies = [
  "solana-client",
  "solana-sdk",
  "tabled",
- "termcolor",
  "tokio",
  "tracing",
  "tracing-subscriber",
