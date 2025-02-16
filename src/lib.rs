@@ -82,10 +82,10 @@ impl App {
 
         for account in tx.get_account_keys() {
             if let Some(ref rpc) = self.rpc {
-                let balance = rpc.get_balance(&account).await?;
+                let balance = rpc.get_balance(account).await?;
                 let signatures = rpc
                     .get_signatures_for_address_with_config(
-                        &account,
+                        account,
                         solana_client::rpc_client::GetConfirmedSignaturesForAddress2Config {
                             limit: Some(25),
                             ..Default::default()
