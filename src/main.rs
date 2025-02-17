@@ -22,11 +22,11 @@ async fn main() -> anyhow::Result<()> {
 
     let tx_bytes = b64.decode(args.tx).expect("valid tx");
     let tx = {
-        if let Ok(tx) = bincode::deserialize::<Transaction>(&tx_bytes) {
-            TransactionVariant::Transaction(tx)
+        if let Ok(tx) = bincode::deserialize::<VersionedTransaction>(&tx_bytes) {
+            TransactionVariant::VersionedTransaction(tx)
         } else {
-            TransactionVariant::VersionedTransaction(
-                bincode::deserialize::<VersionedTransaction>(&tx_bytes)
+            TransactionVariant::Transaction(
+                bincode::deserialize::<Transaction>(&tx_bytes)
                     .expect("Require Transaction or Versioned Transaction"),
             )
         }
