@@ -5,6 +5,15 @@ executed. For example, the ones visible from Phantom when developer mode is
 activated. This functionality allows for a better understanding of which
 programs and accounts are used.
 
+## Installation
+
+We don't offer precompiled binaries, so the best way to install & compile is
+through cargo. [This requires that rust & cargo is installed.](https://www.rust-lang.org/learn/get-started)
+```
+cargo install soltx
+```
+You can find the [crate here](https://crates.io/crates/soltx)
+
 ## Usage
 
 Run the program `soltx <TX>` where <TX> is the transaction as a simple String. 
